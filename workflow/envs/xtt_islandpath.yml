@@ -1,0 +1,12 @@
+name: xtt_islandpath
+
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+
+dependencies:
+  - perl
+  - perl-bioperl
+  - hmmer
+  - islandpath

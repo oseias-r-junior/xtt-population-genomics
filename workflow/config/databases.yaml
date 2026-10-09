@@ -1,0 +1,34 @@
+# Centralized configuration for external databases used by the
+# population-aware genomic island engine (PANISLE).
+#
+# IMPORTANT:
+#   - URLs for MobileOG, VFDB, CARD, Pfam change periodically.
+#   - ALWAYS confirm the current release URL before running downloads.
+#   - This file intentionally does NOT store fixed URLs.
+#   - Download scripts should accept --url overrides.
+#
+# Databases are stored under `resources_dir`, outside the PANISLE codebase.
+
+resources_dir: resources/databases
+
+databases:
+
+  mobileog:
+    version: latest
+    url: ""            # REQUIRED: set manually or via --url
+    dest: MobileOG
+
+  vfdb:
+    version: latest
+    url: ""            # REQUIRED: set manually or via --url
+    dest: VFDB
+
+  card:
+    version: latest
+    url: ""            # REQUIRED: set manually or via --url
+    dest: CARD
+
+  pfam:
+    version: latest
+    url: ""            # REQUIRED: set manually or via --url
+    dest: Pfam

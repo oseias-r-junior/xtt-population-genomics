@@ -1,0 +1,16 @@
+name: xtt_isescan
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+
+dependencies:
+  - biopython
+  - numpy
+  - scipy
+  - pandas
+  - hmmer=3.4
+  - blast
+  - fraggenescan
+  - isescan=1.7.3
+  - pip

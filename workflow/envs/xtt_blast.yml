@@ -1,0 +1,22 @@
+# =============================================================================
+# Xtt Population Genomics Pipeline
+#
+# Environment: xtt_blast
+#
+# Purpose:
+#   BLAST+ for the MGE Sequence Similarity Network (SSN), mirroring
+#   Uceda-Campos et al. 2022 (Microorganisms) methodology: all-vs-all
+#   nucleotide BLASTN among prophage/genomic island/plasmid/IS instances,
+#   filtered by identity > 50% and query coverage > 80%.
+# =============================================================================
+
+name: xtt_blast
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - blast=2.16.0
+  - biopython
+  - pandas
+  - networkx
+  - openpyxl

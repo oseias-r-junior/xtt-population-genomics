@@ -1,0 +1,35 @@
+# micromamba environment for the population-aware genomic island engine.
+#
+# Create (on CCAST):
+#     micromamba create -n xtt_gi -f workflow/envs/xtt_genomic_islands.yml
+#     micromamba activate xtt_gi
+#
+# Do NOT install packages ad hoc; add them here and recreate the environment.
+name: xtt_panisle
+
+channels:
+  - conda-forge
+  - bioconda
+
+dependencies:
+  # --- core Python stack ------------------------------------------------
+  - numpy
+  - pandas
+  - scikit-learn
+  - biopython
+  - pyyaml
+  - tqdm
+  - pytest
+
+  # --- external bioinformatics tools -----------------------------------
+  - diamond          # population-independent homology search (MobileOG/VFDB/CARD)
+  - blast            # optional / legacy
+  - hmmer            # optional HMM-based mobilome
+  - trnascan-se      # tRNA detection
+  - aragorn          # tRNA detection (alternative)
+
+  # --- pangenome (run separately to produce Roary outputs) -------------
+  # roary is optional here; the pipeline consumes its outputs
+  # (gene_presence_absence.csv, pan_genome_sequences/). Uncomment if you
+  # want Roary in the same environment:
+  # - roary

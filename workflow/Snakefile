@@ -1,0 +1,56 @@
+#############################################
+# Xtt Population Genomics Pipeline
+#############################################
+
+############################################################
+# CONFIGURATION
+############################################################
+
+include: "config/genomes.py"
+
+############################################################
+# MODULES
+############################################################
+
+include: "rules/insertion_sequences.smk"
+include: "rules/prophages.smk"
+include: "rules/plasmids.smk"
+include: "rules/defense_systems.smk"
+include: "rules/integration.smk"
+include: "rules/genomic_islands.smk"
+include: "rules/ssn.smk"
+include: "rules/clade_correlation.smk"
+
+# Future modules
+# include: "rules/phylogeny.smk"
+# include: "rules/annotations.smk"
+
+############################################################
+# GLOBAL TARGET
+############################################################
+
+PIPELINE_TARGETS = (
+    IS_TARGETS
+    + PROPHAGE_TARGETS
+    + PLASMID_TARGETS
+    + DEFENSE_TARGETS
+    + INTEGRATION_TARGETS
+    + GENOMIC_ISLAND_TARGETS
+    + SSN_TARGETS
+    + CLADE_CORR_TARGETS
+)
+
+localrules: all, paper
+
+rule all:
+    input:
+        clades=str(GENOME_CLADES),
+        targets=PIPELINE_TARGETS
+
+# Only what the manuscript uses: MGE network + MGE/defense/virulence analyses.
+# `snakemake -s workflow/Snakefile paper --cores 1`
+rule paper:
+    input:
+        clades=str(GENOME_CLADES),
+        ssn=SSN_TARGETS,
+        clade_corr=CLADE_CORR_TARGETS

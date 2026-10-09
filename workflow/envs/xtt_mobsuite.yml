@@ -1,0 +1,27 @@
+name: xtt_mobsuite
+
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+
+dependencies:
+  # Python
+
+  # MOB-suite
+  - mob_suite
+
+  # Common utilities
+  - pandas
+  - biopython
+  - numpy
+
+  # Compression / parsing
+  - pigz
+  - gzip
+
+  # Optional but useful
+  - tqdm
+
+  # Ensure pip is available
+  - pip

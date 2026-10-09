@@ -1,0 +1,57 @@
+# Safety net: this repository is code-only. Data and results are never committed.
+
+# data and tool outputs
+raw_genomes/
+annotations/
+annotation_logs/
+pangenome/roary/
+phylogeny/recombination_intermediates/
+phylogeny/final_alignments/
+input_data_*/
+ARCHIVES/
+third_party/
+envs_archive/
+containers/
+resources/
+
+# generated files
+*.fasta
+*.fa
+*.fna
+*.faa
+*.ffn
+*.gbk
+*.gff
+*.aln
+*.xmfa
+*.tre
+*.tree
+*.treefile
+*.contree
+*.newick
+*.png
+*.pdf
+*.svg
+*.tsv
+*.csv
+*.xlsx
+*.gz
+*.zip
+*.tar
+
+# workflow state and logs
+.snakemake/
+logs/
+slurm-*.out
+*.err
+*.out
+__pycache__/
+*.pyc
+
+# backups
+*.bak*
+*.orig
+
+# re-include the documentation placeholders
+!data/README.md
+!metadata/README.md
