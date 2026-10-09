@@ -2,6 +2,9 @@
 
 [![License: MIT](https://img.shields.io/badge/Code-MIT-blue.svg)](LICENSE-CODE)
 
+Analysis workflow for the manuscript (in preparation; working title):
+> Velasco, D., Belen, G., Feitosa-Junior, O., Schachterle, J., Friskop, A., Liu, Z., and Baldwin, T. *Exploring the population diversity of* Xanthomonas translucens *pv.* translucens*, causing bacterial leaf streak on barley in North Dakota and other barley-producing states.*
+
 Snakemake workflow for mobilome, defense-system and virulence-gene analyses of *X. translucens* pv. *translucens* (Xtt) population genomes, run on an HPC cluster (SLURM).
 
 > **Status: manuscript in preparation.** This repository shares the **analysis workflow** (code, environments, run order). **Data, results, figures and derived tables are not included**; they will be released together with the associated publication.
